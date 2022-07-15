@@ -15,67 +15,92 @@ class MenuAluno extends StatelessWidget {
             color: const Color.fromARGB(255, 156, 176, 223),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  child: const Text(
-                    "ola Jose",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
+              children: const [
+                Text(
+                  "ola Jose",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
                   ),
                 ),
-                Container(
-                  child: const Icon(Icons.power_settings_new_rounded),
-                ),
+                const Icon(Icons.power_settings_new_rounded),
               ],
             ),
           ),
           //começa grid
           const SizedBox(
-            height: 100,
+            height: 100 / 2,
           ),
 
+          Flexible(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Gridss(
+                  texto: "Turma & Alunos",
+                  img: Image.asset(
+                    "assets/icon/teacher.png",
+                    width: 100,
+                    height: 100,
+                  ),
+                ),
+                const Divider(
+                  color: Colors.white,
+                ),
+                Gridss(
+                  texto: "Disciplina",
+                  img: Image.asset(
+                    "assets/icon/pencil.png",
+                    width: 100,
+                    height: 100,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const Divider(),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Gridss(
-                texto: "Turma & Alunos",
-                img: Image.asset("assets/icon/aulaPr.jpg"),
+                texto: "Avaliacoes",
+                img: Image.asset(
+                  "assets/icon/book.png",
+                  width: 100,
+                  height: 100,
+                ),
               ),
-              Divider(),
+              const Divider(),
               Gridss(
-                texto: "Turma & Alunos",
-                img: Image.asset("assets/icon/aulaPr.jpg"),
+                texto: "Midia",
+                img: Image.asset(
+                  "assets/icon/folder.png",
+                  width: 100,
+                  height: 100,
+                ),
               ),
             ],
           ),
-          Divider(),
+          const Divider(),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Gridss(
-                texto: "Turma & Alunos",
-                img: Image.asset("assets/icon/aulaPr.jpg"),
+                texto: "Chat",
+                img: Image.asset(
+                  "assets/icon/chat.png",
+                  width: 100,
+                  height: 100,
+                ),
               ),
-              Divider(),
+              const Divider(),
               Gridss(
-                texto: "Turma & Alunos",
-                img: Image.asset("assets/icon/aulaPr.jpg"),
-              ),
-            ],
-          ),
-          Divider(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Gridss(
-                texto: "Turma & Alunos",
-                img: Image.asset("assets/icon/aulaPr.jpg"),
-              ),
-              Divider(),
-              Gridss(
-                texto: "Turma & Alunos",
-                img: Image.asset("assets/icon/aulaPr.jpg"),
+                texto: "Horario",
+                img: Image.asset(
+                  "assets/icon/clock.png",
+                  width: 100,
+                  height: 100,
+                ),
               ),
             ],
           )

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tuaescola/views/Menu/aluno/MenuAluno.dart';
-import 'package:tuaescola/views/autentica%C3%A7%C3%A3o/login/login.dart';
-import 'package:tuaescola/widget/gridss/gridss.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +18,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         useMaterial3: true,
       ),
-      home: MenuAluno(),
+      home: const MenuAluno(),
     );
   }
 }
