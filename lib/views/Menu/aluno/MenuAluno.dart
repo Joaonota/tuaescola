@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tuaescola/widget/gridss/gridss.dart';
+import 'package:tuaescola/widget/gridss/gridcust.dart';
 
 class MenuAluno extends StatelessWidget {
   const MenuAluno({Key? key}) : super(key: key);
@@ -7,103 +7,65 @@ class MenuAluno extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
+      body: Stack(
         children: [
           Container(
-            padding: const EdgeInsets.all(20),
-            height: 200 / 2,
-            color: const Color.fromARGB(255, 156, 176, 223),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
-                Text(
-                  "ola Jose",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                  ),
-                ),
-                const Icon(Icons.power_settings_new_rounded),
-              ],
+            height: MediaQuery.of(context).size.height * .3,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/icon/top_header.png"),
+              ),
             ),
           ),
-          //começa grid
-          const SizedBox(
-            height: 100 / 2,
-          ),
-
-          Flexible(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+          SafeArea(
+              child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
               children: [
-                Gridss(
-                  texto: "Turma & Alunos",
-                  img: Image.asset(
-                    "assets/icon/teacher.png",
-                    width: 100,
-                    height: 100,
+                Container(
+                  child: Row(
+                    children: [
+                      const CircleAvatar(
+                        radius: 32,
+                        backgroundImage: AssetImage(
+                          "assets/logo/logo.jpg",
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 16,
+                      ),
+                      Column(
+                        children: const [
+                          Text(
+                            'jose antonio',
+                            style: TextStyle(
+                                fontFamily: "Montserrat Medium",
+                                color: Colors.white,
+                                fontSize: 20),
+                          ),
+                          Text(
+                            'Estudante',
+                            style: TextStyle(
+                                fontSize: 14,
+                                color: Colors.white,
+                                fontFamily: "Montserrat Regular"),
+                          )
+                        ],
+                      ),
+                      const SizedBox(
+                        width: 100,
+                      ),
+                      const Icon(Icons.power_settings_new)
+                    ],
                   ),
                 ),
-                const Divider(
-                  color: Colors.white,
+                const SizedBox(
+                  height: 50,
                 ),
-                Gridss(
-                  texto: "Disciplina",
-                  img: Image.asset(
-                    "assets/icon/pencil.png",
-                    width: 100,
-                    height: 100,
-                  ),
-                ),
+                const Gridcust(),
               ],
             ),
-          ),
-          const Divider(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Gridss(
-                texto: "Avaliacoes",
-                img: Image.asset(
-                  "assets/icon/book.png",
-                  width: 100,
-                  height: 100,
-                ),
-              ),
-              const Divider(),
-              Gridss(
-                texto: "Midia",
-                img: Image.asset(
-                  "assets/icon/folder.png",
-                  width: 100,
-                  height: 100,
-                ),
-              ),
-            ],
-          ),
-          const Divider(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Gridss(
-                texto: "Chat",
-                img: Image.asset(
-                  "assets/icon/chat.png",
-                  width: 100,
-                  height: 100,
-                ),
-              ),
-              const Divider(),
-              Gridss(
-                texto: "Horario",
-                img: Image.asset(
-                  "assets/icon/clock.png",
-                  width: 100,
-                  height: 100,
-                ),
-              ),
-            ],
-          )
+          ))
         ],
       ),
     );
