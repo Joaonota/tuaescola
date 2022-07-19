@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tuaescola/views/Menu/aluno/MenuAluno.dart';
+import 'package:tuaescola/views/Menu/aluno/avaliacaoes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         useMaterial3: true,
       ),
-      home: const MenuAluno(),
+      home: const AvaliacoesAluno(),
     );
   }
 }
